@@ -173,7 +173,7 @@ border: none;
 .section-pad{
     padding: 188px 0;
     background:#2E2F42;
-    background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office.jpg);
+    background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office-mob.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 1440px;
@@ -182,15 +182,21 @@ border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
     margin: 0 auto;
 }
-
+@media screen and (min-device-pixel-ratio: 2), 
+(min-resolution:192dpi),
+(min-resolution:2dppx){
+    .section-pad{
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office-mob-2x.jpg);
+    }
+}
 .section-head {
 font-weight:700;
-font-size:56px;
-line-height:1.07;
+font-size: 36px;
+line-height: 1.11111;
 letter-spacing:0.02em;
 text-align:center;
 color:#FFF;
-max-width: 496px;
+max-width: 216px; 
 margin-left: auto;
 margin-right: auto;
 }
@@ -215,6 +221,35 @@ transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .section-button:focus{
     background-color: #404BBF;
     cursor: pointer;
+}
+@media screen and (min-width:768px) {
+    .section-pad{
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office-tab.jpg);
+    }
+    @media screen and (min-device-pixel-ratio: 2), 
+(min-resolution:192dpi),
+(min-resolution:2dppx){
+    .section-pad{
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office-tab-2x.jpg);
+    }
+}
+}
+@media screen and (min-width:1158px) {
+    .section-pad{
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office.jpg);
+    }
+    .section-head{
+        max-width: 496px;
+        line-height:1.07;
+        font-size:56px;
+    }
+    @media screen and (min-device-pixel-ratio: 2), 
+(min-resolution:192dpi),
+(min-resolution:2dppx){
+    .section-pad{
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),url(../images/people-office-2x.jpg);
+    }
+}
 }
 /* .section{
     padding: 120px 0;
@@ -525,13 +560,6 @@ padding-left: 16px;
     padding-top: 100px;
     padding-bottom: 100px;
 }
-/* .footer-paragraph {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #f4f4fd;
-    max-width: 264px;
-} */
 .footer-paragraph {
     font-size: 16px;
     line-height: 1.5;
@@ -543,38 +571,17 @@ padding-left: 16px;
 .logo-part-footer{
     color: #f4f4fd;
 }
-/* .footer-icons-wrap{
-align-self: center;
-} */
 .footer-icons-wrap{
     align-self: center;
     margin-bottom: 72px;
     
     }
-/* .footer-container{
-    display: flex;
-    align-items: baseline;
-} */
 .footer-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-/* .logo-footer-wrap{
-    margin-right: 120px;
-} */
-/* .footer-logo{
-    color:#4D5AE5;
-    font-family:"Raleway",sans-serif;
-    font-weight:700;
-    font-size:18px;
-    line-height:1.17;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
-    display: inline-block;
-    margin-bottom: 16px;
-} */
 .footer-logo{
     color:#4D5AE5;
     font-family:"Raleway",sans-serif;
@@ -583,26 +590,15 @@ align-self: center;
     line-height:1.17;
     letter-spacing:0.03em;
     text-transform:uppercase;
-    display: inline-block;
+    display: block;
+    text-align: center;
     margin-bottom: 16px;
 }
-/* .type-window{
-    margin-left: 80px;
-} */
 .type-window{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-  
 } 
-/* .footer-subtitle-wrap{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    margin-bottom: 16px;
-  color: #ffffff;
-} */
 .footer-subtitle-wrap{
     font-weight: 500;
     font-size: 16px;
@@ -633,10 +629,6 @@ font-weight: 400;
     letter-spacing: 0.04em;
     color: #fff;
 }
-/* .footer-email{
-    display: flex;
-    gap: 24px;
-} */
 .footer-email{
 width: 100%;
 }
@@ -667,6 +659,8 @@ border: none;
 display: flex;
 justify-content: center;
 align-items: center;
+margin: 0 auto;
+margin-top: 16px;
 font-weight: 500;
 font-size: 16px;
 line-height: 1.5;
@@ -687,14 +681,6 @@ cursor: pointer;
 .footer-button-text{
 
 }
-/* .footer-subtitle{
-    font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  margin-bottom: 16px;
-color: #ffffff;
-} */
 .footer-subtitle{
     font-weight: 500;
   font-size: 16px;
@@ -736,14 +722,82 @@ margin: auto;
   @media screen and (min-width:768px) {
     .footer-container{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: baseline;
   flex-wrap: wrap;
   flex-direction: row;
+  padding-left: 108px;
+  gap: 72px 24px;
     }
     .footer-paragraph {
         max-width: 264px;
+        margin-bottom: 0;
     }
+    .footer-icons-wrap{
+        align-self: auto;
+        margin-bottom: 0;
+        }
+    .footer-email{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+    .footer-button{
+        margin-top: 0;
+        margin-left: 24px;
+    }
+    .footer-subtitle-wrap{
+        text-align: left;
+    }
+    .footer-logo{
+        display: inline-block;
+    }
+  }
+  @media screen and (min-width:1158px){
+    .footer-email{
+        display: flex;
+        gap: 24px;
+    } 
+    .footer-subtitle-wrap{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        margin-bottom: 16px;
+      color: #ffffff;
+    }
+    .footer-logo{
+        color:#4D5AE5;
+        font-family:"Raleway",sans-serif;
+        font-weight:700;
+        font-size:18px;
+        line-height:1.17;
+        letter-spacing:0.03em;
+        text-transform:uppercase;
+        display: inline-block;
+        margin-bottom: 16px;
+    }
+    .logo-footer-wrap{
+        margin-right: 120px;
+    } 
+    .footer-icons-wrap{
+        align-self: center;
+        margin-bottom: 72px;
+             }
+    .footer-container{
+            display: flex;
+            align-items: baseline;
+            padding-left: 0;
+            flex-wrap: nowrap;
+        } 
+    .type-window{
+            margin-left: 80px;
+        }
+        .footer-subtitle{
+            text-align: left;
+        }
+        .footer-paragraph{
+            width: 264px;
+        }
   }
   .modal-overlay{
     position: fixed;
