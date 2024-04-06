@@ -87,6 +87,77 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 background-color: transparent;
 border: none;
 }
+.mob-menu {
+   position: fixed;
+   top:0;
+   background-color: #fff;
+   width: 100vw;
+   height: 100vh;
+   padding: 24px 24px 40px 16px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   opacity: 0;
+   pointer-events: none;
+   visibility: hidden;
+}
+.mob-menu-close-button {
+    display: block;
+margin-left: auto;
+border-radius: 100%;
+fill: #e7e9fc;
+border: 1px solid rgba(0, 0, 0, 0.1);
+cursor: pointer;
+}
+.mob-menu-close-icon {
+    fill: #2e2f42;
+}
+.mob-menu-list {
+margin-top: 24px;
+margin-bottom: 50px;
+}
+.mob-menu-item:not(:last-child){
+margin-bottom: 40px;
+}
+.mob-menu-link-navigation {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+.current {
+    color:#404bbf;
+}
+.mob-menu-address-item{
+    padding-bottom: 24px;
+}
+.mob-menu-social{
+    display: flex;
+    gap: 40px;
+align-items: center;
+justify-content: center;
+}
+.mob-menu-wrap{
+width: 40px;
+height: 40px;
+}
+.mob-menu-background{
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu-icon-social {
+    fill: #f4f4fd;
+    display: flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media screen and (min-width:768px){
 
     .logo{
@@ -221,6 +292,11 @@ transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .section-button:focus{
     background-color: #404BBF;
     cursor: pointer;
+}
+.portfolio-picture{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
 }
 @media screen and (min-width:768px) {
     .section-pad{
@@ -799,7 +875,18 @@ margin: auto;
             width: 264px;
         }
   }
-  .modal-overlay{
+  /* .modal-overlay{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4); 
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+ .modal-overlay{
     position: fixed;
     top: 0;
     width: 100%;
@@ -810,12 +897,12 @@ margin: auto;
     pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-overlay.is-open{
+.is-open{
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-.modal{
+/* .modal{
     position: absolute;
     width: 408px;
     min-height: 584px;
@@ -825,6 +912,20 @@ margin: auto;
     top: 50%;
     padding: 72px 24px 24px;
     left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+} */
+.modal{
+    position: absolute;
+    width: 288px;
+    min-height: 623px;
+    overflow-y: auto;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    top: 50%;
+    padding: 72px 16px 24px;
+   left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -877,7 +978,8 @@ margin-bottom: 16px;
     height: 40px;
     background-color: transparent;
     outline: transparent;
-    padding-left: 38px;
+    /* padding-left: 38px; */
+    padding-left: 34px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus{
@@ -902,10 +1004,20 @@ letter-spacing: 0.04em;
 color: #8e8f99
 
 }
+/* .modal-icon{
+    position: absolute;
+    fill: #2e2f42;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .modal-icon{
     position: absolute;
     fill: #2e2f42;
     left: 16px;
+    width: 18px;
+    height: 18px;
     top: 50%;
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -916,10 +1028,25 @@ color: #8e8f99
 .modal-field-textarea{
     margin-bottom: 16px;
 }
-.modal-textarea{
+/* .modal-textarea{
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     width: 360px;
+    height: 120px;
+    padding: 8px 16px;
+    outline: transparent;
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    resize: none;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+} */
+.modal-textarea{
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 256px;
     height: 120px;
     padding: 8px 16px;
     outline: transparent;
@@ -941,7 +1068,7 @@ line-height: 1.16667;
 letter-spacing: 0.04em;
 color: rgba(46, 47, 66, 0.4);
 }
-.button-send{
+ .button-send{
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 background: #4d5ae5;
 border-radius: 4px;
@@ -953,8 +1080,7 @@ align-items: center;
 justify-content: center;
 border:none;
 cursor: pointer;
-}
-
+} 
 .checkbox-text{
     font-weight: 400;
 font-size: 12px;
@@ -971,11 +1097,11 @@ background-color:  #404bbf;
     
 
 }
-
 .checkbox-link{
     text-decoration: underline;
 text-decoration-skip-ink: none;
 color: #4d5ae5;
+padding-left: 24px;
 }
 .user-privacy-span{
     display: inline-flex;
@@ -994,9 +1120,6 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
 }
 
 .text-send{
-
-}
-.button-send{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -1009,6 +1132,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cu
     border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .button-send:hover{
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #404bbf;
